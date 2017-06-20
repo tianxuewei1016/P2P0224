@@ -41,9 +41,9 @@
             android:text="资产" />
 
         <RadioButton
-            android:layout_marginTop="5dp"
             android:id="@+id/rb_more"
             style="@style/MainButtonStyle"
+            android:layout_marginTop="5dp"
             android:drawableTop="@drawable/more_icon"
             android:text="更多" />
     </RadioGroup>
