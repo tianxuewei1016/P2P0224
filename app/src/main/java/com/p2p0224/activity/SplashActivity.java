@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.p2p0224.R;
+import com.p2p0224.utils.UIUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -86,7 +87,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        splashTvVersion.setText(getVersionCode());
+//        splashTvVersion.setText(getVersionCode());
+        //第一个参数是 含有占位字符的字符串 第二个参数是占位字符的值
+        splashTvVersion.setText(
+                UIUtils.stringFormat(
+                        R.string.splash_version,
+                        getVersionCode()));
     }
 
     /**

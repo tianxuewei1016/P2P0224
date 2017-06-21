@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">硅谷金融</string>
     <string name="action_settings">Settings</string>
-
+    <string name="splash_version">当前版本:%1$s</string>
+    <string name="main_name">预计年利率:%1$s</string>
     <string-array name="aaa">
 
     </string-array>
