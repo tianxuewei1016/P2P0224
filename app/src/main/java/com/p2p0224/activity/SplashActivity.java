@@ -105,6 +105,6 @@ public class SplashActivity extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        return "";
+        return "3";
     }
 }
