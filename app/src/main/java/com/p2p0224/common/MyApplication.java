@@ -22,5 +22,7 @@ public class MyApplication extends Application {
         super.onCreate();
         //初始化给上下文
         context = this;
+        //初始化CrashHandler
+        //CrashHandler.getInstance().init(this);
     }
 }
