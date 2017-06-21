@@ -1,12 +1,6 @@
 package com.p2p0224.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import com.p2p0224.base.BaseFragment;
 
 /**
  * 作者：田学伟 on 2017/6/20 15:27
@@ -14,18 +8,21 @@ import android.widget.TextView;
  * 作用：
  */
 
-public class PropertyFragment extends Fragment {
-    @Nullable
+public class PropertyFragment extends BaseFragment {
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText("dddddd");
-        return textView;
+    protected void initTitle() {
+
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    protected void initData() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return 0;
     }
 }
 

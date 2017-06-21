@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:atguigu="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -7,8 +8,6 @@
     <include layout="@layout/base_title"></include>
 
     <ScrollView
-
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,57 +25,21 @@
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
+
                 <!--<android.support.v4.view.ViewPager
-android:id="@+id/vp_home"
+                    android:id="@+id/vp_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                </android.support.v4.view.ViewPager>
 
-
-                android:layout_width="match_parent"
-
-
-
-                android:layout_height="match_parent">
-
-
-
-
-
-
-
-            </android.support.v4.view.ViewPager>
-
-
-
-
-
-
-
-           <com.viewpagerindicator.CirclePageIndicator
-
-
-
-                android:id="@+id/cp_home_indicator"
-
-
-
-                android:layout_width="match_parent"
-
-
-
-                android:layout_height="wrap_content"
-
-
-
-               android:layout_gravity="center_horizontal|bottom"
-
-
-
-                android:layout_marginBottom="5dp"
-
-
-
-               />-->
-
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/cp_home_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="5dp"
+                    />-->
 
             </FrameLayout>
 
@@ -130,47 +93,23 @@ android:id="@+id/vp_home"
                     android:padding="5dp"
                     android:text="高额收益"
                     android:textColor="@color/home_back_unselected" />
+
             </LinearLayout>
 
 
             <!--<com.atguigu.p2pinvest0828.ui.RoundProgress-->
-
-
             <!--android:id="@+id/roundPro_home"-->
-
-
             <!--android:layout_width="120dp"-->
-
-
             <!--android:layout_height="120dp"-->
-
-
             <!--android:layout_marginTop="10dp"-->
-
-
             <!--atguigu:roundColor="@color/more_text"-->
-
-
             <!--atguigu:roundProgressColor="@color/round_red_common"-->
-
-
             <!--atguigu:textColor="@color/title_back"-->
-
-
             <!--atguigu:textSize="20dp"-->
-
-
             <!--atguigu:roundWith="10dp"-->
-
-
             <!--atguigu:max="100"-->
-
-
             <!--atguigu:progress="70"-->
-
-
             <!--/>-->
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -193,6 +132,7 @@ android:id="@+id/vp_home"
                     android:textSize="20sp" />
             </LinearLayout>
 
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -213,8 +153,6 @@ android:id="@+id/vp_home"
                 android:textColor="@color/home_back_unselected" />
 
         </LinearLayout>
-
     </ScrollView>
-
-
 </LinearLayout>
+
