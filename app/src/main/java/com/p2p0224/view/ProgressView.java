@@ -1,7 +1,9 @@
 package com.p2p0224.view;
 
+
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -10,6 +12,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.p2p0224.R;
 import com.p2p0224.utils.UIUtils;
 
 /**
@@ -27,15 +30,15 @@ import com.p2p0224.utils.UIUtils;
 public class ProgressView extends View {
 
     private Paint paint;
-    private int paintColor = Color.BLACK;
+    private int paintColor;
     private int strokeWidth = UIUtils.dp2px(10);
     private int height;
     private int width;
     private int sweepAngle = 0;
+    private int textColor;
 
     public ProgressView(Context context) {
         super(context);
-
         init();
     }
 
@@ -52,9 +55,26 @@ public class ProgressView extends View {
         paint.setStyle(Paint.Style.STROKE);//设置圆环填充的样式
     }
 
+    /**
+     * 自定义属性:
+     * 1.创建attrs文件
+     * 2.在自定义控件构造器方法中,实例化attrs对象并获取属性名称和默认值
+     * 3.在布局文件中使用自定义属性
+     *
+     * @param context
+     * @param attrs
+     */
     public ProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.progressView);
+        int color = typedArray.getColor(R.styleable.progressView_paintColor, Color.BLACK);
+        this.paintColor = color;
+        int tc = typedArray.getColor(R.styleable.progressView_textColor, Color.BLUE);
+        textColor = tc;
+        //释放资源数据
+        typedArray.recycle();
     }
 
     @Override
@@ -75,7 +95,7 @@ public class ProgressView extends View {
         super.onDraw(canvas);
 
         paint.setStrokeWidth(strokeWidth);//画笔的宽度
-        paint.setColor(Color.BLACK);//圆环的颜色
+        paint.setColor(paintColor);//圆环的颜色
 
         //画圆
         int cx = width / 2;//圆心的x坐标
@@ -92,6 +112,7 @@ public class ProgressView extends View {
         canvas.drawArc(rectF, 0, sweepAngle, false, paint);
 
         //画文字
+        paint.setColor(textColor);
         paint.setStrokeWidth(0);//设置画笔的宽度
         String str = sweepAngle + "%";
         paint.setTextSize(30);//设置文字的大小
