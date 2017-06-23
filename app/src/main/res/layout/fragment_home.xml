@@ -7,7 +7,7 @@
 
     <include layout="@layout/base_title"></include>
 
-    <ScrollView
+    <com.p2p0224.view.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -159,6 +159,6 @@
                 android:textColor="@color/home_back_unselected" />
 
         </LinearLayout>
-    </ScrollView>
+    </com.p2p0224.view.MyScrollView>
 </LinearLayout>
 
