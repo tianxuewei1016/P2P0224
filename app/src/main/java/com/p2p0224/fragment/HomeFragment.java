@@ -1,7 +1,11 @@
 package com.p2p0224.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +15,7 @@ import com.p2p0224.base.BaseFragment;
 import com.p2p0224.bean.IndexBean;
 import com.p2p0224.common.AppNetConfig;
 import com.p2p0224.utils.HttpUtils;
+import com.p2p0224.view.ProgressView;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -45,6 +50,8 @@ public class HomeFragment extends BaseFragment {
     TextView tvHomeProduct;
     @Bind(R.id.tv_home_yearrate)
     TextView tvHomeYearrate;
+    @Bind(R.id.proView)
+    ProgressView proView;
 
     @Override
     protected void initTitle() {
@@ -89,6 +96,7 @@ public class HomeFragment extends BaseFragment {
             public void onSuccess(String json) {
                 IndexBean indexBean = JSON.parseObject(json, IndexBean.class);
                 initBanner(indexBean);
+                initProgressView(indexBean);
             }
 
             @Override
@@ -96,6 +104,11 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
+    }
+
+    private void initProgressView(IndexBean indexBean) {
+        String progress = indexBean.getProInfo().getProgress();
+        proView.setSweepAngle(Integer.parseInt(progress));
     }
 
     /**
@@ -171,6 +184,14 @@ public class HomeFragment extends BaseFragment {
     @Override
     public int getLayoutId() {
         return R.layout.fragment_home;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
     }
 
     @Override
